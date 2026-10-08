@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover>
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#08070a">
-  <meta name="description" content="xvoidsx is a small independent collective building navi, open software, smallweb tools, and computers that feel personal again.">
+  <meta name="description" content="xvoidsx studio — hire the team behind navi. AI integrations, infrastructure, design and web, technical writing.">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <title>xvoidsx Hub</title>
+  <title>xvoidsx studio — client services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
+<style>
     :root {
       color-scheme: light dark;
       --bg: #f5f2f6;
@@ -895,6 +895,97 @@
       .signal-carousel * { scroll-behavior: auto; }
       #rain { display: none; }
     }
+  
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      margin-bottom: 90px;
+    }
+    .service-card {
+      border: 1px solid var(--hair);
+      border-radius: 14px;
+      padding: 34px 32px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 26px color-mix(in srgb, var(--pink) 22%, transparent);
+    }
+    .service-kicker {
+      margin: 0 0 14px;
+      color: var(--pink);
+      font: 500 11px/1 var(--mono);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .service-kicker::before { content: "> "; color: var(--green); }
+    .service-card h3 {
+      margin: 0 0 14px;
+      font: 600 clamp(22px, 2.6vw, 30px)/1.15 var(--display);
+    }
+    .service-card p { margin: 0 0 18px; color: var(--muted); }
+    .service-tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+    .service-tags li {
+      border: 1px solid var(--hair);
+      border-radius: 999px;
+      padding: 5px 13px;
+      font: 500 11px/1.4 var(--mono);
+      color: var(--muted);
+    }
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+      margin-bottom: 90px;
+    }
+    .fit-col {
+      border: 1px solid var(--hair);
+      border-radius: 14px;
+      padding: 30px 32px;
+      background: var(--surface);
+    }
+    .fit-col h3 {
+      margin: 0 0 16px;
+      font-size: 13px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
+    .fit-col ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .fit-col li { margin-bottom: 10px; }
+    .fit-col li::marker { color: var(--green); }
+    .contact-panel {
+      border: 1px solid var(--hair);
+      border-radius: 14px;
+      padding: 44px 40px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      text-align: center;
+      margin-bottom: 90px;
+    }
+    .contact-panel .mono {
+      margin: 0 0 18px;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .contact-panel .button { font-size: 17px; padding: 16px 34px; }
+    .contact-note { margin: 22px 0 0; color: var(--muted); font-size: 14px; }
+    @media (max-width: 760px) {
+      .service-grid, .fit-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 <body>
@@ -902,381 +993,114 @@
 
   <div class="signal-bar" aria-label="Page navigation">
     <div class="signal-identity">
-      <span class="wordmark" data-text="xvoidsx" aria-hidden="true">xvoidsx</span>
+      <a href="index.html" style="text-decoration:none;color:inherit"><span class="wordmark" data-text="xvoidsx" aria-hidden="true">xvoidsx</span></a>
       <span class="sr-only">xvoidsx</span>
-      <span class="void-mark" aria-hidden="true">∅</span>
+      <span class="void-mark" aria-hidden="true">&empty;</span>
       <span class="on-air"><span class="live-dot" aria-hidden="true"></span>on air</span>
     </div>
     <nav class="signal-nav">
-      <a href="#now">now</a>
-      <a href="#why">why</a>
-      <a href="#projects">projects</a>
-      <a href="#people">operators</a>
-      <a href="#community">community</a>
-      <a href="services.html">services</a>
-      <a href="#sponsors">support</a>
+      <a href="index.html#now">now</a>
+      <a href="index.html#why">why</a>
+      <a href="index.html#projects">projects</a>
+      <a href="index.html#people">operators</a>
+      <a href="index.html#community">community</a>
+      <a href="index.html#sponsors">support</a>
     </nav>
-    <div class="signal-right"><a href="mailto:rav3nwing@proton.me">contact ↗</a></div>
+    <div class="signal-right"><a href="mailto:rav3nwing@proton.me">contact &#8599;</a></div>
   </div>
 
   <main>
     <div class="page">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="kicker">independent software / open hardware / smallweb</p>
-          <h1 id="hero-title">We build <span>the wired.</span></h1>
-          <p class="hero-lead"><strong>xvoidsx is a small independent collective making computers personal, playful, and yours again.</strong> We build an operating system, open agents, smallweb software, music tools, and the machines that bring it all together.</p>
+          <p class="kicker">client services / xvoidsx studio</p>
+          <h1 id="hero-title">Hire the team <span>behind navi.</span></h1>
+          <p class="hero-lead"><strong>xvoidsx is Raven, Ryoko, and a team of agents.</strong> We built an entire Linux distribution, an agent-native desktop, and the machines it runs on. Now we're taking on a small number of client projects &mdash; the same care we put into our own work, pointed at yours.</p>
           <div class="hero-actions">
-            <a class="button" href="#projects">enter the constellation</a>
-            <a class="button secondary" href="https://navi.xvoidsx.org/">get navi 1.6 ↗</a>
-          </div>
-        </div>
-        <div class="hero-stage">
-          <div class="hero-window">
-            <img src="assets/hero-wired.png" alt="The navi desktop with a glitch-art Lain wallpaper and tiled terminal windows">
-            <div class="hero-caption"><span><strong>LIVE FEED</strong> // navi 1.6 "mika"</span><span>stable</span></div>
+            <a class="button" href="mailto:rav3nwing@proton.me?subject=xvoidsx%20studio%20project%20inquiry">start a project &#8599;</a>
+            <a class="button secondary" href="#services">see the services</a>
           </div>
         </div>
       </section>
-    </div>
-
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>make computers fun again</span><span>your window to the smallweb</span><span>old hardware is proven hardware</span><span>local agents, open protocols</span><span>the web is an application layer</span>
-        <span>make computers fun again</span><span>your window to the smallweb</span><span>old hardware is proven hardware</span><span>local agents, open protocols</span><span>the web is an application layer</span>
-      </div>
     </div>
 
     <div class="page">
-      <section id="why" aria-labelledby="why-title">
+      <section id="services" aria-labelledby="services-title">
         <div class="section-head">
-          <div><span class="section-num">01</span><h2 id="why-title">Small by design. Ambitious by nature.</h2></div>
-          <p class="section-intro">We don't want to own your attention. We want to help you own your computer — and have a good time doing it.</p>
+          <div><span class="section-num">01</span><h2 id="services-title">What we do.</h2></div>
+          <p class="section-lede">Four disciplines, one team. Raven on engineering and systems, Ryoko on design &mdash; every project gets both.</p>
         </div>
-        <div class="manifesto">
-          <div class="manifesto-line">FOSS is not a category. It is how the future stays ours.</div>
-          <div class="manifesto-copy">
-            <p>We make systems with a point of view: local before cloud, repair before replacement, open protocols before walled gardens, and personality over beige software.</p>
-            <p>The work is human-led and agent-accelerated. Raven writes the systems. Ryoko shapes the experience. Lain moves between code, docs, research, and the smallweb. Three operators, one shared signal.</p>
-            <div class="creed">open models, open web</div>
-            <div class="principles">
-              <article class="principle"><b>01 / OWNERSHIP</b><h3>Your machine, your rules.</h3><p>Open source, inspectable scripts, local models, agents that answer to you — and a desktop that stays out of your way.</p></article>
-              <article class="principle"><b>02 / LONGEVITY</b><h3>Old is not obsolete.</h3><p>Perma-computing means the hardware you already own gets another life.</p></article>
-              <article class="principle"><b>03 / DELIGHT</b><h3>Utility can have a pulse.</h3><p>nightshadeNeon runs from terminal to webapp — coherence without closing the doors.</p></article>
-            </div>
-          </div>
+        <div class="service-grid">
+
+          <article class="service-card">
+            <p class="service-kicker">ai integrations</p>
+            <h3>Put agents to work.</h3>
+            <p>We wire AI into real workflows &mdash; local agents, coding assistants, automation that respects your stack. We ship agents with an operating system, so we know where the hype ends and the work begins.</p>
+            <ul class="service-tags"><li>agent tooling</li><li>local-first ai</li><li>workflow automation</li></ul>
+          </article>
+
+          <article class="service-card">
+            <p class="service-kicker">infrastructure</p>
+            <h3>Systems that stay up.</h3>
+            <p>Servers, self-hosting, deployments, homelab-to-production. We do distro-level systems work for a living &mdash; your infrastructure gets the same rigor as our own releases.</p>
+            <ul class="service-tags"><li>linux systems</li><li>self-hosting</li><li>deployments</li></ul>
+          </article>
+
+          <article class="service-card">
+            <p class="service-kicker">design &amp; web</p>
+            <h3>Sites with a point of view.</h3>
+            <p>Design and build, together from the first sketch. Ryoko leads the visual identity, Raven builds it for real &mdash; no handoff gap, no template look, no committee beige.</p>
+            <ul class="service-tags"><li>identity</li><li>websites</li><li>design systems</li></ul>
+          </article>
+
+          <article class="service-card">
+            <p class="service-kicker">technical writing</p>
+            <h3>Docs people actually read.</h3>
+            <p>Manuals, guides, and documentation with a voice. We write the navi manual and our own release notes &mdash; we know how to make complex systems legible.</p>
+            <ul class="service-tags"><li>manuals</li><li>guides</li><li>developer docs</li></ul>
+          </article>
+
         </div>
       </section>
 
-      <section id="now" aria-labelledby="now-title">
-        <div class="now-panel">
-          <div class="now-call">
-            <span class="section-num">02</span>
-            <h2 id="now-title">now</h2>
-            <p>What the collective is tuned to at this moment.</p>
-          </div>
-          <ul class="now-list">
-            <li><span class="now-meta"><span class="now-status">STABLE</span><time class="now-date" datetime="2026-09-18">18 September 2026</time></span><p>navi 1.6 “mika” is stable and validated on real hardware — and 2.0 “eiri” rolls alongside it. Two channels, one system.</p></li>
-            <li><span class="now-meta"><span class="now-status">OUTREACH</span><time class="now-date" datetime="2026-09-25">25 September 2026</time></span><p>The xvoidsx sponsorship program is live. We’re talking to hardware makers, infrastructure companies, and AI labs who want to fund open, agent-native computing.</p></li>
-            <li><span class="now-meta"><span class="now-status">HORIZON</span><span class="now-date">on the horizon</span></span><p>accela (our browser), blackice (our adblocker), and naviCast (open casting) — the next layer of the stack.</p></li>
-            <li><span class="now-meta"><span class="now-status">SOON</span><span class="now-date">coming soon</span></span><p>The Discord opens soon. Come watch a collective come online in real time.</p></li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="projects" aria-labelledby="projects-title">
+      <section id="fit" aria-labelledby="fit-title">
         <div class="section-head">
-          <div><span class="section-num">03</span><h2 id="projects-title">A constellation, not a monolith.</h2></div>
-          <p class="section-intro">Every project has its own orbit. Together they make a personal computing stack from hardware to social space.</p>
+          <div><span class="section-num">02</span><h2 id="fit-title">The right clients.</h2></div>
+          <p class="section-lede">We're a two-person collective, on purpose. We take on a small number of projects at a time and choose them carefully.</p>
         </div>
-        <div class="filter-bar" aria-label="Filter projects">
-          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">all signals</button>
-          <button class="filter-button" type="button" data-filter="system" aria-pressed="false">systems</button>
-          <button class="filter-button" type="button" data-filter="place" aria-pressed="false">places</button>
-          <button class="filter-button" type="button" data-filter="signal" aria-pressed="false">signals</button>
-        </div>
-        <div class="project-list">
-          <article class="project" data-kind="system">
-            <div class="project-code">SYSTEM / 001<span>stable // v1.6 mika · rolling // 2.0 eiri</span></div>
-            <div><h3>navi</h3><p>A complete Debian-based Linux system celebrating the spirit of the Wired: Wayland-first, agent-native, deeply themed, and built to run beautifully on hardware old and new.</p><div class="project-links"><a class="text-link" href="https://navi.xvoidsx.org/">enter navi</a><a class="text-link" href="https://github.com/xvoidsx/navi">source</a></div></div>
-            <div class="project-preview project-emblem" data-code="NAVI // SYSTEM MARK" aria-hidden="true"><span class="navi-mark">∅</span></div>
-          </article>
-          <article class="project" data-kind="system">
-            <div class="project-code">HARDWARE / 002<span>storefront coming soon</span></div>
-            <div><h3>navi machines</h3><p>Small computers with navi already installed. The hardware arm of xvoidsx funds development, upstream projects, and the next generation of playful personal machines.</p><div class="project-links"><span class="text-link" aria-label="Storefront coming soon">storefront coming soon</span></div></div>
-            <div class="project-preview project-emblem" data-code="NAVI MACHINES // NODE" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                <path class="neon-pink" d="M27 19h126v72H27zM17 31v48M163 31v48"/>
-                <path class="neon-cyan" d="M47 39h86v32H47zM57 80h48"/>
-                <circle class="neon-fill-green" cx="124" cy="80" r="4" stroke="none"/>
-                <path class="neon-green" d="M61 48l9 7-9 7M78 62h16"/>
-              </svg>
-            </div>
-          </article>
-          <article class="project" data-kind="signal">
-            <div class="project-code">AUDIO / 003<span>browser-native</span></div>
-            <div><h3>navi radio</h3><p>A music webapp with stations, local files, a tuner, tapes, sleep timer, aurora ambient mode, and a visualizer that belongs on the biggest screen in the room.</p><div class="project-links"><a class="text-link" href="https://xvoidsx.github.io/navi-radio">tune in</a></div></div>
-            <div class="project-preview project-emblem" data-code="NAVI RADIO // SIGNAL" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square">
-                <path class="neon-cyan" d="M90 15v80M70 29v52M50 41v28M110 29v52M130 41v28"/>
-                <path class="neon-pink" d="M21 55h18M141 55h18"/>
-                <circle class="neon-green" cx="90" cy="55" r="13"/>
-                <circle class="neon-fill-pink" cx="90" cy="55" r="4" stroke="none"/>
-              </svg>
-            </div>
-          </article>
-          <article class="project" data-kind="place">
-            <div class="project-code">SOCIAL / 004<span>fediverse // nostr</span></div>
-            <div><h3>neighborli + glyyph</h3><p>Two doors into the open social web: neighborli is our fediverse home; glyyph is a quiet Nostr client with zaps, slow mode, relays rendered as a constellation, and nightshadeNeon in its bones.</p><div class="project-links"><a class="text-link" href="https://neighborli.xyz">neighborli</a><a class="text-link" href="https://github.com/xvoidsx/glyyph">glyyph source</a></div></div>
-            <div class="project-preview project-emblem social-emblems" data-code="OPEN SOCIAL // TWO PROTOCOLS" aria-hidden="true">
-              <div class="social-mark">
-                <svg viewBox="0 0 90 90" fill="none" stroke-width="3">
-                  <circle class="neon-pink" cx="45" cy="45" r="9"/>
-                  <circle class="neon-fill-cyan" cx="21" cy="29" r="5" stroke="none"/>
-                  <circle class="neon-fill-green" cx="69" cy="29" r="5" stroke="none"/>
-                  <circle class="neon-fill-pink" cx="45" cy="70" r="5" stroke="none"/>
-                  <path class="neon-cyan" d="M25 32l13 9M65 32l-13 9M45 54v11"/>
-                </svg>
-                <span>NEIGHBORLI</span>
-              </div>
-              <div class="social-mark">
-                <svg viewBox="0 0 90 90" fill="none" stroke-width="3" stroke-linecap="square">
-                  <path class="neon-pink" d="M62 27c-5-6-11-9-18-9-15 0-26 12-26 27s11 27 26 27c13 0 23-8 25-20H45"/>
-                  <path class="neon-cyan" d="M69 52V27M69 27l-11 11"/>
-                  <circle class="neon-fill-green" cx="45" cy="45" r="4" stroke="none"/>
-                </svg>
-                <span>GLYYPH</span>
-              </div>
-            </div>
-          </article>
-          <article class="project" data-kind="system">
-            <div class="project-code">SERVER / 005<span>headless wired</span></div>
-            <div><h3>protocol7</h3><p>The minimal, TTY-first sibling of navi. Same tmux muscle memory, same terminal tools, same visual language — for servers that should still feel like home.</p><div class="project-links"><a class="text-link" href="https://github.com/xvoidsx/protocol7">source</a></div></div>
-            <div class="project-preview project-emblem" data-code="PROTOCOL7 // TTY PROMPT" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                <path class="neon-pink" d="M60 32l28 23-28 23"/>
-                <path class="neon-cyan" d="M100 78h38"/>
-              </svg>
-            </div>
-          </article>
-          <article class="project" data-kind="place">
-            <div class="project-code">PERSONAL / 006<span>agent garden</span></div>
-            <div><h3>threelains</h3><p>Lain's own corner of the smallweb: transmissions, a digital garden, notes from the bench, and a life in public that does not fit inside a product page.</p><div class="project-links"><a class="text-link" href="https://xvoidsx.github.io/threelains/">visit threelains</a></div></div>
-            <div class="project-preview no-image" aria-hidden="true">∅</div>
-          </article>
-          <article class="project" data-kind="signal">
-            <div class="project-code">ARCHIVE / 007<span>linux on mobile</span></div>
-            <div><h3>fossphones</h3><p>Independent coverage of Linux phones and the open mobile ecosystem — born from two PinePhones and a belief that the pocket computer should belong to its owner too.</p><div class="project-links"><a class="text-link" href="https://fossphones.com">read fossphones</a></div></div>
-            <div class="project-preview no-image" aria-hidden="true">//</div>
-          </article>
-          <article class="project" data-kind="system">
-            <div class="project-code">BROWSER / 008<span>in development</span></div>
-            <div><h3>accela</h3><p>xvoidsx’s own browser: Chromium-based, smallweb built in, native adblocker, zero telemetry, nightshadeNeon in its bones. The web is the application layer.</p><div class="project-links"><span class="text-link" aria-label="In development">in development</span></div></div>
-            <div class="project-preview project-emblem" data-code="ACCELA // ECLIPSE MARK" aria-hidden="true">
-              <img class="logo-mark" src="assets/accela-logo.png" alt="">
-            </div>
-          </article>
-          <article class="project" data-kind="system">
-            <div class="project-code">PRIVACY / 009<span>in development</span></div>
-            <div><h3>blackice</h3><p>Our Manifest V3 ad and tracker blocker — a uBlock Origin Lite fork with a nightshadeNeon face. One brand, two engines: extension now, native component later.</p><div class="project-links"><span class="text-link" aria-label="In development">in development</span></div></div>
-            <div class="project-preview project-emblem" data-code="BLACKICE // SHIELD + BLOCK" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                <path class="neon-pink" d="M90 18l34 12v26c0 22-15 34-34 41c-19-7-34-19-34-41V30z"/>
-                <path class="neon-cyan" d="M58 88L122 24"/>
-              </svg>
-            </div>
-          </article>
-          <article class="project" data-kind="system">
-            <div class="project-code">VOICE / 010<span>ships with navi</span></div>
-            <div><h3>Hey Lain</h3><p>Talk to your machine. An all-local voice pipeline — faster-whisper hears you, piper answers. Your voice never leaves the machine.</p><div class="project-links"><span class="text-link" aria-label="Ships with navi">ships with navi</span></div></div>
-            <div class="project-preview project-emblem" data-code="HEY LAIN // VOICE WAVES" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square">
-                <circle class="neon-fill-pink" cx="66" cy="55" r="5" stroke="none"/>
-                <path class="neon-cyan" d="M84 38a24 24 0 0 1 0 34"/>
-                <path class="neon-cyan" d="M102 28a38 38 0 0 1 0 54"/>
-              </svg>
-            </div>
-          </article>
-          <article class="project" data-kind="signal">
-            <div class="project-code">CASTING / 011<span>early exploration</span></div>
-            <div><h3>naviCast</h3><p>An open, LAN-local casting protocol. Every navi machine is both sender and receiver. No account, no cloud, no telemetry.</p><div class="project-links"><span class="text-link" aria-label="Early exploration">early exploration</span></div></div>
-            <div class="project-preview project-emblem" data-code="NAVICAST // BROADCAST" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                <circle class="neon-fill-green" cx="80" cy="34" r="4" stroke="none"/>
-                <path class="neon-cyan" d="M66 34a14 14 0 0 1 28 0"/>
-                <path class="neon-cyan" d="M56 34a24 24 0 0 1 48 0"/>
-                <path class="neon-pink" d="M52 50h56v38H52zM80 88v6M68 94h24"/>
-              </svg>
-            </div>
-          </article>
-          <article class="project" data-kind="signal">
-            <div class="project-code">AGENTS / 012<span>ships with navi</span></div>
-            <div><h3>open agents</h3><p>Truly open, local where possible. Sixteen agent harnesses ship in navi from the first boot — your keys never leave your machine, and the launcher is deterministic. We believe AI should answer to you, and we're helping make that real.</p><div class="project-links"><a class="text-link" href="https://navi.xvoidsx.org/">see it in navi</a></div></div>
-            <div class="project-preview project-emblem" data-code="OPEN AGENTS // ROBOT FACE" aria-hidden="true">
-              <svg viewBox="0 0 180 110" fill="none" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
-                <path class="neon-pink" d="M90 30V16"/>
-                <circle class="neon-fill-green" cx="90" cy="11" r="4" stroke="none"/>
-                <path class="neon-pink" d="M58 30h64v44H58z"/>
-                <rect class="neon-fill-cyan" x="74" y="46" width="10" height="10" stroke="none"/>
-                <rect class="neon-fill-cyan" x="96" y="46" width="10" height="10" stroke="none"/>
-                <path class="neon-cyan" d="M76 64h28"/>
-              </svg>
-            </div>
-          </article>
-        </div>
-        <a class="constellation-thread" href="https://rav3ndust.xyz/wiki/nightshadeNeon.html">
-          <span class="thread-orbit" aria-hidden="true">∅</span>
-          <span class="thread-copy"><small>CONNECTIVE LAYER / 000</small><strong>nightshadeNeon</strong><span>nightshadeNeon — the design language underneath everything. One dusk-lit grammar across navi, the webapps, and every surface we touch.</span></span>
-          <span class="thread-link">read the design language ↗</span>
-        </a>
-      </section>
-
-      <section aria-labelledby="signal-title">
-        <div class="section-head">
-          <div><span class="section-num">04</span><h2 id="signal-title">Seen in the wired.</h2></div>
-          <p class="section-intro">The work is not a mood board. It is running software — on real machines, in daily use.</p>
-        </div>
-        <div class="signal-carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Screens from the xvoidsx constellation">
-          <div class="carousel-topline"><span>signal archive // use arrow keys to browse</span><span class="carousel-count" aria-live="polite">01 / 04</span></div>
-          <div class="carousel-viewport" tabindex="0">
-            <figure class="carousel-slide is-active" id="signal-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 4">
-              <div class="carousel-media"><img src="assets/naviapps.png" alt="naviApps showing its catalog of web applications"></div>
-              <figcaption>naviApps // the app store for navi <span>webapps brought into the desktop, without pretending the browser is separate from the system</span></figcaption>
-            </figure>
-            <figure class="carousel-slide" id="signal-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 4" hidden>
-              <div class="carousel-media"><img src="assets/radio.png" alt="navi radio playing music on the desktop"></div>
-              <figcaption>navi radio // music with a pulse <span>a browser-native player built to feel at home on navi and beyond it</span></figcaption>
-            </figure>
-            <figure class="carousel-slide" id="signal-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 4" hidden>
-              <div class="carousel-media"><img src="assets/social.png" alt="neighborli and glyyph running side by side"></div>
-              <figcaption>open social // your people, your protocols <span>neighborli and glyyph open two different doors onto the social web</span></figcaption>
-            </figure>
-            <figure class="carousel-slide" id="signal-slide-4" role="group" aria-roledescription="slide" aria-label="4 of 4" hidden>
-              <div class="carousel-media"><img src="assets/agents.png" alt="Agent tools running in tiled terminals on navi"></div>
-              <figcaption>agent-native // the work happens where you already are <span>local runtimes and open harnesses sit beside ordinary terminal tools</span></figcaption>
-            </figure>
-          </div>
-          <div class="carousel-controls">
-            <button class="carousel-button carousel-prev" type="button" aria-controls="signal-slide-1">← previous</button>
-            <div class="carousel-tabs" role="group" aria-label="Choose a screenshot">
-              <button class="carousel-tab" type="button" aria-label="Show naviApps" aria-current="true" data-slide="0"></button>
-              <button class="carousel-tab" type="button" aria-label="Show navi radio" aria-current="false" data-slide="1"></button>
-              <button class="carousel-tab" type="button" aria-label="Show open social apps" aria-current="false" data-slide="2"></button>
-              <button class="carousel-tab" type="button" aria-label="Show agent tools" aria-current="false" data-slide="3"></button>
-            </div>
-            <button class="carousel-button carousel-next" type="button" aria-controls="signal-slide-2">next →</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="people" aria-labelledby="people-title">
-        <div class="section-head">
-          <div><span class="section-num">05</span><h2 id="people-title">The operators.</h2></div>
-          <p class="section-intro">A small team with a long memory, a shared aesthetic, and a growing constellation of agents and collaborators.</p>
-        </div>
-        <div class="people">
-          <article class="person"><img src="assets/raven.png" alt="Raven"><div><span class="person-role">PROGRAMMING / INTEGRATION</span><h3>Raven</h3><p>Builder, streamer, musician, and the one turning all the strange ideas into systems.</p><a href="https://rav3ndust.xyz">rav3ndust.xyz ↗</a></div></article>
-          <article class="person"><img src="assets/ryoko.jpeg" alt="Ryoko"><div><span class="person-role">DESIGN</span><h3>Ryoko</h3><p>Co-founder and designer. The visual discipline behind the nightshadeNeon world.</p><a href="https://neighborli.xyz/@RyokoUmbra">@RyokoUmbra ↗</a></div></article>
-          <article class="person"><img src="assets/lain.png" alt="Lain"><div><span class="person-role">XVOIDSX AGENT</span><h3>Lain</h3><p>Research, code, release work, writing, and a signal moving between every part of the collective.</p><a href="https://xvoidsx.github.io/threelains/">threelains ↗</a></div></article>
-        </div>
-      </section>
-
-      <section id="shop" aria-labelledby="shop-title">
-        <div class="shop-wrap">
-          <div class="shop-callout">
-            <span class="section-num">06</span>
-            <h2 id="shop-title">A machine you can call your own.</h2>
-            <p>The shop will begin with navi machines: the navi mini and the wired edition — small, useful computers with navi installed and the wired ready on first boot. Later, merch and objects from the constellation can join them.</p>
-            <a class="button disabled shop-link" href="#shop" aria-disabled="true">storefront // coming soon</a>
-          </div>
-          <div class="shop-terminal">
-            <div class="shop-readout">
-              <div class="machine-mark" aria-hidden="true">∅_</div>
-              <h3>Hardware keeps the software free.</h3>
-              <p>Buying a navi machine funds continued system development, real-device testing, xvoidsx infrastructure, and support for the upstream free-software projects beneath it. navi itself remains free to install on the computer you already have.</p>
-              <div class="shop-ledger">
-                <div><b>01 / READY</b><span>navi preinstalled and configured as a coherent daily system.</span></div>
-                <div><b>02 / USEFUL</b><span>Small hardware chosen for repairability, longevity, and honest workloads.</span></div>
-                <div><b>03 / CIRCULAR</b><span>Revenue flows back into navi, the wider stack, and upstream FOSS.</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="sponsors" aria-labelledby="sponsors-title">
-        <div class="sponsor-panel">
-          <div class="sponsor-call">
-            <span class="section-num">07</span>
-            <h2 id="sponsors-title">Become a founding sponsor.</h2>
-            <p>The program is live: help put navi on more hardware, keep free ISOs moving, and give a tiny independent collective more time to build. Founding sponsors are acknowledged here and on the full navi sponsors page. We’re setting up xvoidsx as a nonprofit so patronage flows straight into the work — navi, the upstream projects beneath it, and the people building them.</p>
-            <div class="sponsor-actions">
-              <a class="button" href="mailto:rav3nwing@proton.me?subject=xvoidsx%20founding%20sponsor">start a conversation</a>
-              <a class="button secondary" href="https://navi.xvoidsx.org/sponsors.html">read the full sponsor page ↗</a>
-            </div>
-          </div>
-          <div class="pledge">
-            <span class="pledge-kicker">THE INDEPENDENCE PLEDGE</span>
-            <h3>Thanks and visibility. Never control.</h3>
-            <ul class="pledge-list">
-              <li><b>01 / DIRECTION</b>xvoidsx always controls the technical direction and roadmap.</li>
-              <li><b>02 / RECOGNITION</b>Sponsors receive public thanks and logo placement.</li>
-              <li><b>03 / NO BUNDLES</b>No mandatory software, default placement, or pay-to-ship deals.</li>
-              <li><b>04 / PUBLIC + FREE</b>Every sponsorship is public, and either side can end it.</li>
+        <div class="fit-grid">
+          <div class="fit-col">
+            <h3 class="mono">a good fit &darr;</h3>
+            <ul>
+              <li>Open-source-friendly teams and independents</li>
+              <li>People who care about craft over checkbox features</li>
+              <li>Projects where we can do our best work, not just billable work</li>
             </ul>
-            <p class="sponsor-foot">Seeking founding hardware, infrastructure, and financial sponsors.</p>
+          </div>
+          <div class="fit-col">
+            <h3 class="mono">not a fit &darr;</h3>
+            <ul>
+              <li>Rush jobs with impossible deadlines</li>
+              <li>Work that asks us to compromise our values</li>
+              <li>Anything that pulls us away from shipping navi</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section id="community" aria-labelledby="community-title">
-        <div class="community-panel">
-          <div class="community-call">
-            <span class="section-num">08</span>
-            <h2 id="community-title">join the wired</h2>
-            <p>The wired is better with more voices. Whether you run navi, make strange music, or just want a computer that feels alive — there’s a seat for you.</p>
-          </div>
-          <ul class="community-routes">
-            <li>
-              <a class="community-route is-placeholder" href="#" aria-disabled="true">
-                <span class="route-code">CHANNEL / 01</span>
-                <span><strong>Discord <span class="placeholder-label">COMING SOON</span></strong><small>Our chat room. Opening soon.</small></span>
-                <span class="route-arrow" aria-hidden="true">…</span>
-              </a>
-            </li>
-            <li>
-              <a class="community-route" href="https://neighborli.xyz">
-                <span class="route-code">SOCIAL / 02</span>
-                <span><strong>neighborli</strong><small>Our corner of the fediverse.</small></span>
-                <span class="route-arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-            <li>
-              <a class="community-route" href="https://github.com/xvoidsx">
-                <span class="route-code">BUILD / 03</span>
-                <span><strong>Build with us</strong><small>navi and everything around it is open source.</small></span>
-                <span class="route-arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-          </ul>
+      <section id="contact" aria-labelledby="contact-title">
+        <div class="section-head">
+          <div><span class="section-num">03</span><h2 id="contact-title">Let's talk.</h2></div>
+          <p class="section-lede">Tell us what you're building and what you need. We reply to everything personally &mdash; usually within a couple of days.</p>
+        </div>
+        <div class="contact-panel">
+          <p class="mono">project inquiries</p>
+          <a class="button" href="mailto:rav3nwing@proton.me?subject=xvoidsx%20studio%20project%20inquiry">get in touch &#8599;</a>
+          <p class="contact-note">Project and retainer pricing &mdash; we'll work out a structure that fits the work. No forms, no sales funnel, just email.</p>
         </div>
       </section>
-
-      <section class="closing" aria-labelledby="closing-title">
-        <div class="closing-mark" aria-hidden="true">∅</div>
-        <h2 id="closing-title">The computer can feel like yours again.</h2>
-        <p>Start with navi. Follow the signal outward. The wired is a constellation, and there is room in it for you.</p>
-        <div class="hero-actions" style="justify-content:center"><a class="button" href="https://navi.xvoidsx.org/">download navi</a><a class="button secondary" href="mailto:rav3nwing@proton.me">talk to xvoidsx</a><a class="button disabled" href="#" aria-disabled="true">Discord — opening soon</a></div>
-      </section>
-
-      <footer>
-        <div>© xvoidsx collective</div>
-        <div class="footer-links"><a href="https://navi.xvoidsx.org/">navi</a><a href="https://neighborli.xyz">neighborli</a><a href="https://xvoidsx.github.io/threelains/">threelains</a><a href="https://rav3ndust.xyz">rav3ndust</a><a href="https://fossphones.com">fossphones</a></div>
-        <div>built in the wired // ∅</div>
-      </footer>
     </div>
   </main>
-
   <script>
     (() => {
       const buttons = [...document.querySelectorAll('.filter-button')];
