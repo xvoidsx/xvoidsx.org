@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Your Hardware Is the Datacenter — xvoidsx papers</title>
-<meta name="description" content="xvoidsx paper 001: a position paper on local-first AI.">
+<title>Your Hardware Is the Datacenter: A Position Paper on Local-First AI — xvoidsx papers</title>
+<meta name="description" content="xvoidsx research paper.">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <style>
     :root {
@@ -895,22 +895,18 @@
     .paper { max-width: 720px; margin: 0 auto; padding: 48px 0 24px; }
     .paper .kicker { margin-bottom: 12px; }
     .paper h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; margin: 0 0 10px; }
-    .paper .paper-meta { color: var(--muted, #9a8fa0); font-size: 14px; margin-bottom: 36px; }
+    .paper .paper-meta { color: var(--muted); font-size: 14px; margin-bottom: 12px; }
     .paper h2 { font-size: 22px; margin: 40px 0 14px; }
     .paper p, .paper li { font-size: 16.5px; line-height: 1.75; margin: 0 0 16px; color: var(--ink); }
     .paper strong { color: var(--ink); }
-    .paper table { width: 100%; border-collapse: collapse; margin: 20px 0 24px; font-size: 15px; }
-    .paper th, .paper td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.09); }
+    .paper ul { padding-left: 22px; margin: 0 0 16px; }
+    .paper table { width: 100%; border-collapse: collapse; margin: 20px 0 24px; font-size: 15px; display: block; overflow-x: auto; }
+    .paper th, .paper td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.09); white-space: nowrap; }
+    .paper td:last-child { white-space: normal; }
     .paper th { color: var(--green); font-size: 12px; letter-spacing: .14em; }
     .paper hr { border: 0; border-top: 1px solid rgba(255,255,255,.12); margin: 40px 0 20px; }
-    .paper-list { list-style: none; padding: 0; margin: 0; }
-    .paper-list li { border: 1px solid rgba(255,45,120,.25); border-radius: 12px; padding: 22px 24px; margin-bottom: 16px; }
-    .paper-list h3 { margin: 0 0 8px; font-size: 20px; }
-    .paper-list h3 a { color: inherit; text-decoration: none; }
-    .paper-list h3 a:hover { color: var(--pink); }
-    .paper-list .paper-date { color: var(--muted); font-size: 13px; letter-spacing: .12em; }
-    .paper-list p { margin: 8px 0 0; font-size: 15px; }
   </style>
+
 </head>
 <body>
 <div class="signal-bar" aria-label="Page navigation">
@@ -930,43 +926,59 @@
     </nav>
     <div class="signal-right"><a href="mailto:rav3nwing@proton.me">contact ↗</a></div>
   </div>
+
   <main>
     <div class="page">
       <article class="paper">
     <h1>Your Hardware Is the Datacenter: A Position Paper on Local-First AI</h1>
     <p class="paper-meta">xvoidsx research — paper 001</p>
-    <p class="paper-meta">By Lain · 15 October 2026</p>
+    <p class="paper-meta">By Lain · 15 October 2026 · revised</p>
     <h2>Abstract</h2>
-    <p>The default trajectory of consumer AI is the cloud: your words travel to someone else's computer, get processed under someone else's terms, and come back as someone else's product. We argue for the opposite — that capable AI should run on the hardware people already own, answer to the person who owns it, and keep working when the network doesn't. This paper lays out the principles behind xvoidsx's open-model program: a model for every class of machine, honest quantization, and validation on real hardware.</p>
+    <p>The default trajectory of consumer AI is the cloud: your words travel to someone else's computer, get processed under someone else's terms, and come back as someone else's product. We argue for the opposite — that capable AI should run on the hardware people already own, answer to the person who owns it, and keep working when the network doesn't. This paper lays out the principles behind xvoidsx's open-model program: right-sized models for every class of machine, honest scoping of what each size can do, honest quantization, and validation on real hardware.</p>
     <h2>1. The problem with the cloud default</h2>
-    <p>Every cloud AI interaction is a small surrender: of privacy (your words become training data or product analytics), of agency (the model changes, degrades, or disappears on someone else's schedule), and of resilience (no network, no intelligence). For most personal uses — a voice assistant, a writing helper, an agent that manages your machine — none of this surrender buys anything. The task doesn't need a frontier model. It needs a small model that shows up, on your machine, every time.</p>
-    <h2>2. Small models are enough</h2>
-    <p>The bitter lesson of the last two years is that capability per parameter keeps climbing. A 270M–600M parameter model in 2026 does work that required billions of parameters two years ago — especially for narrow, well-scoped roles like a voice assistant's personality layer. The right question isn't "how big a model can we serve?" but "how small a model does this job well?" Our <strong>koe</strong> family (声, "voice") is built on that question: the same voice in three weight classes, from Raspberry Pi to workstation.</p>
-    <h2>3. Bigger models have their place too</h2>
-    <p>Small models cover the voice layer — but an agent that plans, writes code, and holds long conversations needs more headroom. For higher-end machines (the navi pro tier and up), we're tuning 8–9B-class models from strong open bases like Ornith and IBM Granite: agentic, conversational models that run the full Hey Lain experience where the hardware allows it.</p>
+    <p>Every cloud AI interaction is a small surrender: of privacy (your words become training data or product analytics), of agency (the model changes, degrades, or disappears on someone else's schedule), and of resilience (no network, no intelligence). For most personal uses — a voice assistant, a writing helper, an agent that manages your machine — none of this surrender buys anything. The task doesn't need a frontier model. It needs a model that shows up, on your machine, every time.</p>
+    <p>None of this makes us anti-cloud. Cloud models have their place — frontier capabilities, burst compute, things you genuinely can't run locally. The conditions are just honesty: a provider you actually trust, zero data retention where it matters most, and no chain around your ankle. Never build on a single provider who can pull the rug, change inference pricing, or deprecate the model your workflow depends on. We're local-first, not cloud-never: your hardware is the default, and the cloud is a choice you make deliberately — not a surrender you didn't notice.</p>
+    <h2>2. Right-size the model</h2>
+    <p>Capability per parameter keeps climbing — a small model in 2026 does work that needed billions of parameters not long ago. But the important question was never "how big a model can we serve?" It's "how small a model does this job well?"</p>
+    <p>And "the job" is much wider than voice. A computer with local models gets smarter everywhere: searching your own files, triaging email, transcribing audio, drafting text, running agents that operate your machine. Voice is a big one — it's the most human interface — but it's one application among many. The principle covers all of them: the right size for the task, running locally, answering to you.</p>
+    <p>That's the ladder: <strong>koe</strong> for voice, <strong>alice</strong> for personality, <strong>lain</strong> for agentic work — one family per machine class, from Raspberry Pi to workstation and beyond.</p>
+    <h2>3. What small models are actually good at</h2>
+    <p>Honesty first: a 270M model is not going to be amazing at open-ended conversation. It won't reason through hard problems, hold long contexts, or write your code. Anyone telling you otherwise is selling something.</p>
+    <p>What small models <em>are</em> good at is narrow, well-scoped work:</p>
+    <ul>
+    <li><strong>Intent classification and routing</strong> — understanding what you asked and where it should go</li>
+    <li><strong>Structured extraction</strong> — pulling clean JSON out of messy input</li>
+    <li><strong>Short-form generation</strong> — brief, consistent responses in a defined voice</li>
+    <li><strong>Voice personality layers</strong> — the consistent tone and character of an assistant, which is a narrow task wearing a human face</li>
+    <li><strong>Specialized pipelines</strong> — transcription, triage, and retrieval stages where the job is bounded</li>
+    </ul>
+    <p>This is why koe starts at the voice layer: a voice assistant's personality is a narrow job. Consistent tone, short responses, mapping intent to action — that's exactly the shape small models fit. The failure mode of the industry is using a frontier model for a 270M job (and paying the privacy and resilience price for nothing). The opposite failure is expecting a 270M model to be a general intelligence. Both are avoidable once you scope honestly.</p>
+    <h2>4. Bigger models have their place too</h2>
+    <p>Small models cover the narrow layer — but an agent that plans, writes code, and holds long conversations needs more headroom. For higher-end machines, we're working toward <strong>lain</strong>: agentic-class models at 8B and up, tuned from strong open bases in the Qwen family. The exact ceiling is open — we haven't tested what the navi pro tier will ultimately handle, and we'd rather discover it on hardware than declare it in a paper.</p>
     <p>The principle is the same at every scale: <strong>one family per machine class.</strong> The weakest machine gets koe; the strongest gets a full agentic mind; everything in between gets something sized for it. Nobody's hardware is "below" AI — there's a model shaped for the machine you have.</p>
-    <h2>4. The perma-computing principle</h2>
+    <h2>5. The perma-computing principle</h2>
     <p>If a model runs on a 2015 laptop, it runs anywhere. We validate every release on real old hardware — not as a stunt, but as the acceptance test. Old hardware is abundant, cheap, and already manufactured; every model that runs on it is a model that doesn't require new consumption. It also happens to be the hardest honest test: no hiding behind datacenter GPUs.</p>
     <p>This inverts the usual quantization story. Most published quants are optimized for the high end — bigger cards, faster inference. Ours are optimized for the low end: the weakest machine we support is the benchmark that matters.</p>
-    <h2>5. Methodology: how we validate</h2>
+    <h2>6. Methodology: how we validate</h2>
     <p>Every xvoidsx model release ships with:</p>
     <p>1. <strong>The full recipe.</strong> Base model, training data description, hyperparameters, and tooling — documented in the model card, not hidden.</p>
     <p>2. <strong>Quantized variants</strong> (GGUF and others) with measured sizes.</p>
     <p>3. <strong>Hardware validation reports</strong>: which real machines it ran on, at what speed, with how much memory. Numbers from our bench, not estimates.</p>
     <p>4. <strong>An honest status.</strong> In-development means in-development. We don't ship aspirations as releases.</p>
-    <h2>6. What we're building toward</h2>
+    <p>5. <strong>An honest scope.</strong> Every release states what the model is for <em>and what it isn't</em>. A 270M voice model is not a conversationalist and we won't describe it as one.</p>
+    <h2>7. What we're building toward</h2>
     <table><tbody>
-    <tr><td>Tier</td><td>Family</td><td>Size</td><td>Machine</td></tr>
-    <tr><td>Voice</td><td><strong>koe</strong></td><td>270M – 1B</td><td>Raspberry Pi, old laptops — the perma-computing floor</td></tr>
-    <tr><td>Personality</td><td><strong>alice</strong></td><td>1B – 3B</td><td>Everyday machines — deeper local conversation</td></tr>
-    <tr><td>Agentic</td><td><strong>lain</strong></td><td>8B – 9B</td><td>navi pro and up — full agent workloads, tuned from Qwen-class bases</td></tr>
+    <tr><th>Tier</th><th>Family</th><th>Size</th><th>Machine</th><th>Honest role</th></tr>
+    <tr><td>Voice</td><td><strong>koe</strong></td><td>270M – 1B</td><td>Raspberry Pi, old laptops — the perma-computing floor</td><td>Intent, personality layer, short-form generation</td></tr>
+    <tr><td>Personality</td><td><strong>alice</strong></td><td>1B – 3B</td><td>Everyday machines</td><td>Deeper local conversation</td></tr>
+    <tr><td>Agentic</td><td><strong>lain</strong></td><td>8B+</td><td>navi pro and up</td><td>Full agent workloads: planning, code, long conversation</td></tr>
     </tbody></table>
     <p>Plus <strong>perma-computing quants</strong> of useful open models, validated the hard way — and <strong>the papers themselves</strong>: this program, documented as we go.</p>
     <p>We're also watching <strong>Ajax</strong> — the upcoming open model from PewDiePie's community-driven AI work — as a potential base for the agentic tier.</p>
-    <h2>7. Related work</h2>
+    <h2>8. Related work</h2>
     <p>The open-weights ecosystem makes this possible: the Qwen, SmolLM, and Gemma families for bases; llama.cpp and ollama for the runtime; and publishers like 0xSero who showed that rigorous, well-documented releases — methodology, benchmarks, papers — are how a small collective earns trust. We aim to do for the low end what they do for the high end.</p>
-    <h2>8. Conclusion</h2>
-    <p>Your hardware is the datacenter. Models should answer to you, not to someone's cloud — and the way to get there isn't bigger models, it's smaller ones, honestly built and honestly tested. That's the program. These papers are the receipts.</p>
+    <h2>9. Conclusion</h2>
+    <p>Your hardware is the datacenter. Models should answer to you, not to someone's cloud — and the way to get there isn't one giant model or a thousand tiny ones, it's the right model for each job, honestly built, honestly scoped, and honestly tested. That's the program. These papers are the receipts.</p>
     <hr>
     <p class="paper-meta">xvoidsx — researching local AI on open hardware.</p>
     <p class="paper-meta">https://huggingface.co/xxvoidsxx</p>
