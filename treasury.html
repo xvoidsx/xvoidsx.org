@@ -1148,6 +1148,20 @@
         </div>
       </section>
 
+      <section id="donate" aria-labelledby="donate-title">
+        <div class="section-head">
+          <div><span class="section-num">06</span><h2 id="donate-title">Support the treasury.</h2></div>
+          <p class="section-lede">Every coin goes back into the mission.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <p class="service-kicker">donate xnv</p>
+            <h3 class="mono" id="treasury-address" title="Click to copy" style="font-size: clamp(13px, 1.5vw, 16px); word-break: break-all; line-height: 1.7; cursor: pointer;">NV28zFDaDAHc9yHAnCQDRCiTCQvQx42jfNqCpYAq7VEeYwtQE3u4bjnV6fVW2vZBibdPVgkchpkEWJxbaZ1QJraU1XhT7xgDu</h3>
+            <p>Donations land in the master treasury wallet, alongside everything the fleet mines. Same rules apply: held as reserves, spent only on the work. Click the address to copy it.</p>
+          </article>
+        </div>
+      </section>
+
       <footer>
         <div>&copy; xvoidsx collective</div>
         <div class="footer-links"><a href="https://navi.xvoidsx.org/">navi</a><a href="https://neighborli.xyz">neighborli</a><a href="https://xvoidsx.github.io/threelains/">threelains</a><a href="https://rav3ndust.xyz">rav3ndust</a><a href="https://fossphones.com">fossphones</a><a href="https://github.com/xvoidsx">github</a><a href="https://huggingface.co/xxvoidsxx">hugging face</a></div>
@@ -1156,6 +1170,20 @@
     </div>
   </main>
   <script>
+    (() => {
+      const addr = document.getElementById('treasury-address');
+      if (addr) {
+        addr.addEventListener('click', () => {
+          const done = () => {
+            const orig = addr.getAttribute('title');
+            addr.setAttribute('title', 'Copied!');
+            setTimeout(() => addr.setAttribute('title', orig), 1500);
+          };
+          if (navigator.clipboard) { navigator.clipboard.writeText(addr.textContent.trim()).then(done, done); }
+          else { done(); }
+        });
+      }
+    })();
     (() => {
       const buttons = [...document.querySelectorAll('.filter-button')];
       const projects = [...document.querySelectorAll('.project')];
